@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spicy Studios - Home</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/Styles.css" rel="stylesheet">
+  </head>
+  <body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html">Spicy Studios</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+	  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop(); // Get the current page name
+    
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === page) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  });
+</script>
+
+    <!-- Header Section with Video Background -->
+  <header>
+    <div class="video-container">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/24QDhIYIZ6Y?si=sMtD-fMdtdetFRtg" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+      <div class="overlay">
+        <div class="container text-center text-white">
+          <h1 class="display-4">Welcome to Spicy Studios</h1>
+          <p class="lead">We create games that challenge and inspire.</p>
+          <a class="btn btn-secondary btn-lg" href="https://www.youtube.com/@S_Fisk" role="button">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Latest Article Section -->
+    <div id="latest-article" class="text-center">
+      <h2>Latest Article</h2>
+      <div id="article-container">
+        <div id="article-title">Loading latest article...</div>
+        <div id="article-excerpt"></div>
+        <div class="button-container">
+          <a id="read-more-link" class="btn btn-secondary btn-lg" href="latestArticle.link">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center bg-dark text-white py-4">
+        <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to Load Latest Article -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Fetch the JSON file containing the articles
+        fetch('../Articles/articles.json')
+          .then(response => response.json())
+          .then(articles => {
+            // Find the latest article based on publication date
+            let latestArticle = articles.reduce((latest, current) => {
+              let latestDate = new Date(latest.publication_date);
+              let currentDate = new Date(current.publication_date);
+              return currentDate > latestDate ? current : latest;
+            });
+
+            // Update the article section with the latest article's details
+            document.getElementById('article-title').textContent = latestArticle.title;
+            document.getElementById('article-excerpt').textContent = latestArticle.excerpt;
+            document.getElementById('read-more-link').setAttribute('href', latestArticle.link);
+          })
+          .catch(error => {
+            console.error('Error loading articles:', error);
+            document.getElementById('article-title').textContent = 'Failed to load article.';
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+/* Global Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* General Container Styling */
+.container {
+    padding-top: 70px; /* Adjust padding for fixed navbar */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #1c3d24; /* Dark green background for navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: white !important; /* White links */
+}
+
+.nav-link:hover {
+    color: #66b27d !important; /* Light green on hover */
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.nav-link.active {
+    color: #66b27d !important; /* Light green for active links */
+    font-weight: bold;
+}
+
+/* Jumbotron */
+.jumbotron {
+    margin-bottom: 0;
+    background-color: #2e8b57; /* Darker green for jumbotron */
+    color: white;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+}
+
+.jumbotron p {
+    font-size: 1.3rem;
+}
+
+/* Video Background for Index Page */
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1; /* To place behind content */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Latest Article Section */
+#latest-article {
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+#latest-article h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+#latest-article p {
+    font-size: 1.1rem;
+}
+
+#latest-article .btn-primary {
+    background-color: #1c3d24; /* Dark green for buttons */
+    border-color: #1c3d24;
+}
+
+#latest-article .btn-primary:hover {
+    background-color: #2e8b57; /* Lighter green on hover */
+    border-color: #2e8b57;
+}
+
+/* Button Styles */
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Team Section */
+#team {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#team img.rounded-circle {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+/* Articles Page Styles */
+#articles-list .article-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#articles-list h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+#articles-list p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#articles-list .btn-primary {
+    background-color: #1c3d24; /* Dark green for buttons */
+    border-color: #1c3d24;
+}
+
+#articles-list .btn-primary:hover {
+    background-color: #2e8b57; /* Lighter green on hover */
+    border-color: #2e8b57;
+}
+/* Article Item */
+.article-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-item img {
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Date and Time Styling */
+.article-item p.text-muted {
+    font-size: 0.9rem;
+    color: #666;
+}
+/* Footer Styles */
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #66b27d; /* Light green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .photo-article {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .article-photo {
+        margin-bottom: 20px;
+    }
+}
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #1c3d24; /* Dark green background for navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: white !important; /* White links */
+}
+
+.nav-link:hover {
+    color: #66b27d !important; /* Light green on hover */
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.nav-link.active {
+    color: #66b27d !important; /* Light green for active links */
+    font-weight: bold;
+}

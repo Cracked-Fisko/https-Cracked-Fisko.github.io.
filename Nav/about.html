@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy Studios - About</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/Styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html">Spicy Studios</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+	  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop(); // Get the current page name
+    
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === page) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  });
+</script>
+
+
+    <!-- Meet The Team Section -->
+    <section id="team" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Meet The Team</h2>
+            <p>We are a small, dedicated team with a big vision for creating amazing games.</p>
+            <div class="row justify-content-center mt-4">
+                <!-- Fisky Profile -->
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-4">
+                    <img class="rounded-circle mb-3" alt="Fisky" src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/579720/8b8d2b0a9741393dc767cad197e5631baae8756b.gif" 
+                         style="width: 140px; height: 140px;">
+                    <h3>Fisky</h3>
+                    <p><strong>Lead Programmer</strong></p>
+                    <p>As the lead programmer at Spicy Studios, I specialize in creating smooth and engaging game experiences that push boundaries.</p>
+                    <a href="../teampages/Fisky.html" class="btn btn-primary">Learn more about Fisky</a>
+                </div>
+                
+                <!-- Bosh Profile -->
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                    <img class="rounded-circle mb-3" alt="Bosh" src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/650330/658d7a42b02f59a94b0ea2a97ee46b4323b66c78.gif" 
+                         style="width: 140px; height: 140px;">
+                    <h3>Bosh</h3>
+                    <p><strong>Programmer & Asset Designer</strong></p>
+                    <p>I design game assets, develop the story, and fine-tune gameplay mechanics to ensure everything works seamlessly.</p>
+                    <a href="../teampages/Bosh.html" class="btn btn-primary">Learn more about Bosh</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center bg-dark text-white py-4">
+            <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery and Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
