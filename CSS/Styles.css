@@ -293,3 +293,27 @@ footer a:hover {
 .carousel-item img {
     border-radius: 5px;
 }
+/* Contact Form */
+.contact-form {
+    padding-top: 100px; /* Adjust for fixed navbar */
+    margin-bottom: 40px;
+}
+
+.contact-form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-form button {
+    background-color: #1c3d24;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: #2e8b57;
+}
