@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="../CSS/Styles.css" rel="stylesheet"> <!-- Link to your CSS file -->
-    <title>Projects - Spicy Studios</title>
+    <title>Projects | Spicy Studios</title>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -48,9 +48,9 @@
       .then(projects => {
         let projectsGrid = document.getElementById('projects-grid');
         
-        // Generate HTML for each project in a grid
+        // HTML for each project in a grid
         projects.forEach(project => {
-          // Convert publication date to a readable format (no minutes or seconds)
+          // Convert publication date
           const publicationDate = new Date(project.publication_date);
           const formattedDate = publicationDate.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -58,7 +58,7 @@
             day: 'numeric'
           });
 
-          // Create HTML structure for each project with YouTube iframe
+          // Create HTML structure for each project with YouTube in mind
           let projectHTML = `
             <div class="col-md-4 mb-4">
               <div class="project-item p-3 border rounded">
