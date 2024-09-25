@@ -7,6 +7,29 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+/* 404 Page Styles */
+.container h1 {
+    font-size: 6rem;
+    color: #333;
+}
+
+.container p {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.container .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #1c3d24;
+    border: none;
+    color: white;
+}
+
+.container .btn:hover {
+    background-color: #2e8b57;
+}
+
 
 /* General Container Styling */
 .container {
