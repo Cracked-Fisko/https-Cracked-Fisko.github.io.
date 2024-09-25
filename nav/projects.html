@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/Styles.css" rel="stylesheet"> <!-- Link to your CSS file -->
+    <title>Projects - Spicy Studios</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="../">Spicy Studios</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/articles">Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Projects Section -->
+<div class="container mt-5 pt-5">
+    <h1>Our Projects</h1>
+    <div class="row" id="projects-grid">
+        <!-- Projects will be dynamically loaded here -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center bg-dark text-white py-4 mt-5">
+    <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fetch the JSON file containing the projects
+    fetch('../projects/projects.json')  // Adjust the path as needed
+      .then(response => response.json())
+      .then(projects => {
+        let projectsGrid = document.getElementById('projects-grid');
+        
+        // Generate HTML for each project in a grid
+        projects.forEach(project => {
+          // Convert publication date to a readable format (no minutes or seconds)
+          const publicationDate = new Date(project.publication_date);
+          const formattedDate = publicationDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+
+          // Create HTML structure for each project with YouTube iframe
+          let projectHTML = `
+            <div class="col-md-4 mb-4">
+              <div class="project-item p-3 border rounded">
+                <div class="embed-responsive embed-responsive-16by9 mb-3">
+                  <iframe class="embed-responsive-item" width="640" height="480" src="${project.youtube_link}" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                  </iframe>
+                </div>
+                <h2>${project.title}</h2>
+                <p class="text-muted">Published on ${formattedDate}</p>
+                <p>${project.excerpt}</p>
+                <a href="/" class="btn btn-primary">Read More</a> <!-- Temporary link to homepage -->
+              </div>
+            </div>`;
+          
+          // Append each project to the grid
+          projectsGrid.innerHTML += projectHTML;
+        });
+      })
+      .catch(error => {
+        console.error('Error loading projects:', error);
+        document.getElementById('projects-grid').textContent = 'Failed to load projects.';
+      });
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
