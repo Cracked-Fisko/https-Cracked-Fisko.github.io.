@@ -263,3 +263,33 @@ footer a:hover {
     color: #66b27d !important; /* Light green for active links */
     font-weight: bold;
 }
+/* Article Content */
+.article-content {
+    margin-top: 20px;
+}
+
+.article-text {
+    padding: 20px;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Carousel Customization */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    border-radius: 5px;
+}
