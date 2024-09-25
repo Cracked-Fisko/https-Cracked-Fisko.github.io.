@@ -1,25 +1,23 @@
-{
-  "articles": [
-    {
-      "title": "Should You Start Game Development on a Indie Title?",
-      "publication_date": "2024-09-01T10:30:00",
-      "image": "../images/indie-game-development.jpg",
-      "excerpt": "Discover how indie game developers are reshaping the industry and what it takes to build a successful indie game.",
-      "link": "../articles/article1.html"
-    },
-    {
-      "title": "Unity vs Unreal: Which is Better?",
-      "publication_date": "2024-09-05T12:15:00",
-      "image": "../images/unity-vs-unreal.jpg",
-      "excerpt": "Unity and Unreal are two of the most popular game engines today. Find out which one suits your needs best.",
-      "link": "../articles/unity-vs-unreal.html"
-    },
-    {
-      "title": "How to Optimize Your Game for Mobile",
-      "publication_date": "2024-09-10T14:45:00",
-      "image": "../images/mobile-game-optimization.jpg",
-      "excerpt": "Tips and tricks for optimizing your game for mobile devices, ensuring smooth performance across platforms.",
-      "link": "../articles/mobile-game-optimization.html"
-    }
-  ]
-}
+[
+  {
+    "title": "The Future of Gaming",
+    "publication_date": "2024-01-15T10:00:00Z",
+    "image": "https://example.com/images/future-of-gaming.jpg",
+    "excerpt": "An overview of the trends shaping the gaming industry.",
+    "link": "../nav/articles/future-of-gaming.html"
+  },
+  {
+    "title": "Tech Innovations in 2024",
+    "publication_date": "2024-02-10T14:00:00Z",
+    "image": "https://example.com/images/tech-innovations.jpg",
+    "excerpt": "Exploring the groundbreaking tech innovations coming this year.",
+    "link": "../nav/articles/tech-innovations.html"
+  },
+  {
+    "title": "The Rise of Indie Games",
+    "publication_date": "2024-03-05T12:00:00Z",
+    "image": "https://example.com/images/indie-games.jpg",
+    "excerpt": "How indie games are reshaping the gaming landscape.",
+    "link": "../nav/articles/rise-of-indie-games.html"
+  }
+]
