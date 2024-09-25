@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../CSS/Styles.css" rel="stylesheet"> <!-- Link to your CSS file -->
-    <title>Spicy Studios | Projects</title>
+    <link href="../CSS/Styles.css" rel="stylesheet"> <!-- Link to your existing CSS file -->
+    <title>Spicy Studios | Search</title>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -19,90 +19,40 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="../nav/about">About</a></li>
-            <li class="nav-item active"><a class="nav-link" href="../nav/projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="../nav/articles">Articles</a></li>
             <li class="nav-item"><a class="nav-link" href="../nav/contact">Contact</a></li>
         </ul>
-          <form class="form-inline ml-3" action="../nav/search.html" method="get">
+        <form class="form-inline ml-3" action="../nav/search.html" method="get">
             <input class="form-control mr-2" type="search" placeholder="Search..." aria-label="Search" name="query">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
-
-<!-- Projects Section -->
-<div class="container mt-5 pt-5">
-    <h1>Our Projects</h1>
-    <div class="row" id="projects-grid">
-        <!-- Projects will be dynamically loaded here -->
-    </div>
+<!-- Search Results Section -->
+<div class="container" style="padding-top: 100px;">
+    <h1>Search Results</h1>
+    <div id="search-results" class="mt-4"></div> <!-- Container for search results -->
 </div>
 
 <!-- Footer -->
-    <footer class="text-center bg-dark text-white py-4">
-        <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
-      </div>
-    </footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Fetch the JSON file containing the projects
-    fetch('../projects/projects.json')  // Adjust the path as needed
-      .then(response => response.json())
-      .then(projects => {
-        let projectsGrid = document.getElementById('projects-grid');
-        
-        // HTML for each project in a grid
-        projects.forEach(project => {
-          // Convert publication date
-          const publicationDate = new Date(project.publication_date);
-          const formattedDate = publicationDate.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          });
-
-          // Create HTML structure for each project with YouTube in mind
-          let projectHTML = `
-            <div class="col-md-4 mb-4">
-              <div class="project-item p-3 border rounded">
-                <div class="embed-responsive embed-responsive-16by9 mb-3">
-                  <iframe class="embed-responsive-item" width="640" height="480" src="${project.youtube_link}" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                    encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                  </iframe>
-                </div>
-                <h2>${project.title}</h2>
-                <p class="text-muted">Published on ${formattedDate}</p>
-                <p>${project.excerpt}</p>
-                <a href="/" class="btn btn-primary">Read More</a> <!-- Temporary link to homepage -->
-              </div>
-            </div>`;
-          
-          // Append each project to the grid
-          projectsGrid.innerHTML += projectHTML;
-        });
-      })
-      .catch(error => {
-        console.error('Error loading projects:', error);
-        document.getElementById('projects-grid').textContent = 'Failed to load projects.';
-      });
-  });
-</script>
+<footer class="text-center bg-dark text-white py-4">
+    <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
 
-    searchForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const query = searchInput.value.toLowerCase();
+    // Check if there's a query string in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('query');
 
+    if (query) {
       // Fetch both the articles and projects JSON files
       Promise.all([
         fetch('../projects/projects.json').then(res => res.json()),
@@ -112,7 +62,7 @@
 
         // Search Projects
         projects.forEach(project => {
-          if (project.title.toLowerCase().includes(query) || project.excerpt.toLowerCase().includes(query)) {
+          if (project.title.toLowerCase().includes(query.toLowerCase()) || project.excerpt.toLowerCase().includes(query.toLowerCase())) {
             results.push({
               type: 'Project',
               title: project.title,
@@ -123,7 +73,7 @@
 
         // Search Articles
         articles.forEach(article => {
-          if (article.title.toLowerCase().includes(query) || article.excerpt.toLowerCase().includes(query)) {
+          if (article.title.toLowerCase().includes(query.toLowerCase()) || article.excerpt.toLowerCase().includes(query.toLowerCase())) {
             results.push({
               type: 'Article',
               title: article.title,
@@ -136,7 +86,7 @@
       }).catch(error => {
         console.error('Error fetching data:', error);
       });
-    });
+    }
 
     function displayResults(results) {
       let resultsContainer = document.getElementById('search-results');
@@ -160,4 +110,5 @@
   });
 </script>
 
+</body>
 </html>
