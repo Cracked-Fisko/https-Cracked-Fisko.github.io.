@@ -1,23 +1,23 @@
 [
   {
-    "title": "The Future of Gaming",
+    "title": "The King of Gaming",
     "publication_date": "2024-01-15T10:00:00Z",
     "image": "https://example.com/images/future-of-gaming.jpg",
     "excerpt": "An overview of the trends shaping the gaming industry.",
-    "link": "../nav/articles/future-of-gaming.html"
+    "link": "../articles/the-future-of-gaming.html"
   },
   {
     "title": "Tech Innovations in 2024",
     "publication_date": "2024-02-10T14:00:00Z",
     "image": "https://example.com/images/tech-innovations.jpg",
     "excerpt": "Exploring the groundbreaking tech innovations coming this year.",
-    "link": "../nav/articles/tech-innovations.html"
+    "link": "../articles/tech-innovations.html"
   },
   {
     "title": "The Rise of Indie Games",
     "publication_date": "2024-03-05T12:00:00Z",
     "image": "https://example.com/images/indie-games.jpg",
     "excerpt": "How indie games are reshaping the gaming landscape.",
-    "link": "../nav/articles/rise-of-indie-games.html"
+    "link": "../articles/rise-of-indie-games.html"
   }
 ]
