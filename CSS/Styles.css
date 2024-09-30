@@ -1,4 +1,5 @@
 /* Global Styles */
+
 body, html {
     height: 100%;
     margin: 0;
@@ -186,7 +187,13 @@ body, html {
     width: 150px;
     height: 150px;
 }
-
+  .article-bg {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+  }
 /* Articles Page Styles */
 #articles-list .article-item {
     background-color: #f9f9f9;
