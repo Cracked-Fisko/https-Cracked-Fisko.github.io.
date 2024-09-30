@@ -143,11 +143,12 @@ body, html {
 
 #latest-article h2 {
     font-size: 2rem;
-    color: #333;
+    color: #fff;
 }
 
 #latest-article p {
     font-size: 1.1rem;
+        color: #fff;
 }
 
 #latest-article .btn-primary {
