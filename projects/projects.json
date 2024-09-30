@@ -1,16 +1,16 @@
 [
   {
-    "title": "Project 1",
+    "title": "David Bombal",
     "publication_date": "2024-09-22T14:00:00Z",
-    "excerpt": "This is a brief summary of Project 1.",
+    "excerpt": "David Bombal",
     "youtube_link": "https://www.youtube.com/embed/4ljq8JMFbJM?si=6IB4Pcd8eTsfFi8q",
     "link": "/project1"
   },
   {
-    "title": "Project 2",
+    "title": "XAU Events :D",
     "publication_date": "2024-08-15T14:00:00Z",
-    "excerpt": "This is a brief summary of Project 2.",
-    "youtube_link": "https://www.youtube.com/embed/another-video-id",
+    "excerpt": "How to Use XAU events :D",
+    "youtube_link": "https://www.youtube.com/embed/9-oAuq6zFVg?si=KfYgSTC8yc6KJTnT",
     "link": "/project2"
   }
 ]
