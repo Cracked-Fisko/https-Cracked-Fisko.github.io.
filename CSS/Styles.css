@@ -109,16 +109,6 @@ body, html {
 }
 
 /* Styling for the header text */
-.overlay h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #666;
-}
-
-.overlay p {
-    font-size: 1.3rem;
-    color: #333;
-}
 .overlay h45 {
     font-size: 3rem;
     font-weight: bold;
