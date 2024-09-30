@@ -7,6 +7,7 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+/* 404 Page Styles */
 .container h1 {
     font-size: 6rem;
     color: #333;
@@ -16,7 +17,15 @@ body, html {
     font-size: 1.3rem;
     color: #666;
 }
+.container h45 {
+    font-size: 6rem;
+    color: #fff;
+}
 
+.container p45 {
+    font-size: 1.3rem;
+    color: #fff;
+}
 .container .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1.2rem;
@@ -28,6 +37,7 @@ body, html {
 .container .btn:hover {
     background-color: #2e8b57;
 }
+
 
 /* General Container Styling */
 .container {
@@ -97,52 +107,18 @@ body, html {
     z-index: -1; /* To place behind content */
 }
 
-/* Ensuring all text inside the overlay is white */
 .overlay {
-    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    color: white;
     text-align: center;
-}
-
-/* Styling for the header text */
-.overlay h45 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.overlay p45 {
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-
-/* Styling the button */
-.overlay .btn-secondary {
-    background-color: #6c757d; /* Grey button for contrast */
-    border-color: #6c757d;
-    color: #fff;
-}
-
-.overlay .btn-secondary:hover {
-    background-color: #5a6268;
-    border-color: #545b62;
-    color: #fff;
-}
-
-/* Responsive text adjustments */
-@media (max-width: 768px) {
-    .overlay h1 {
-        font-size: 2.5rem;
-    }
-    
-    .overlay p {
-        font-size: 1.1rem;
-    }
 }
 
 /* Latest Article Section */
@@ -161,16 +137,15 @@ body, html {
 
 #latest-article p {
     font-size: 1.1rem;
-    color: #666;
 }
 
 #latest-article .btn-primary {
-    background-color: #1c3d24;
+    background-color: #1c3d24; /* Dark green for buttons */
     border-color: #1c3d24;
 }
 
 #latest-article .btn-primary:hover {
-    background-color: #2e8b57;
+    background-color: #2e8b57; /* Lighter green on hover */
     border-color: #2e8b57;
 }
 
@@ -223,15 +198,14 @@ body, html {
 }
 
 #articles-list .btn-primary {
-    background-color: #1c3d24;
+    background-color: #1c3d24; /* Dark green for buttons */
     border-color: #1c3d24;
 }
 
 #articles-list .btn-primary:hover {
-    background-color: #2e8b57;
+    background-color: #2e8b57; /* Lighter green on hover */
     border-color: #2e8b57;
 }
-
 /* Article Item */
 .article-item {
     background-color: #f9f9f9;
@@ -254,7 +228,6 @@ body, html {
     font-size: 0.9rem;
     color: #666;
 }
-
 /* Footer Styles */
 footer {
     margin-top: auto;
@@ -293,7 +266,34 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #1c3d24; /* Dark green background for navbar */
+}
 
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: white !important; /* White links */
+}
+
+.nav-link:hover {
+    color: #66b27d !important; /* Light green on hover */
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.nav-link.active {
+    color: #66b27d !important; /* Light green for active links */
+    font-weight: bold;
+}
 /* Article Content */
 .article-content {
     margin-top: 20px;
@@ -324,7 +324,6 @@ footer a:hover {
 .carousel-item img {
     border-radius: 5px;
 }
-
 /* Contact Form */
 .contact-form {
     padding-top: 100px; /* Adjust for fixed navbar */
