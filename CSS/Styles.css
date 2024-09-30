@@ -111,12 +111,10 @@ body, html {
 }
 
 /* Styling for the header text */
-.overlay h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff; /* White for the main header */
+.container.text-center.text-white h1,
+.container.text-center.text-white p {
+    color: white !important;
 }
-
 .overlay p {
     font-size: 1.3rem;
     color: #fff; /* White for the subtext */
