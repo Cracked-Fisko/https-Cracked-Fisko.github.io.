@@ -8,11 +8,7 @@ body, html {
     background-color: #f4f4f4;
 }
 
-/* Container Styles */
-.container {
-    padding-top: 70px; /* Adjust padding for fixed navbar */
-}
-
+/* 404 Page Styles */
 .container h1 {
     font-size: 6rem;
     color: #fff;
@@ -35,13 +31,18 @@ body, html {
     background-color: #2e8b57;
 }
 
+/* General Container Styling */
+.container {
+    padding-top: 70px; /* Adjust padding for fixed navbar */
+}
+
 /* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1030;
-    background-color: #1c3d24;
+    background-color: #1c3d24; /* Dark green background for navbar */
 }
 
 .navbar-brand {
@@ -51,23 +52,23 @@ body, html {
 
 .nav-link {
     font-size: 1.1rem;
-    color: white !important;
+    color: white !important; /* White links */
 }
 
 .nav-link:hover {
-    color: #66b27d !important;
+    color: #66b27d !important; /* Light green on hover */
 }
 
 .navbar-nav .nav-item.active .nav-link,
 .nav-link.active {
-    color: #66b27d !important;
+    color: #66b27d !important; /* Light green for active links */
     font-weight: bold;
 }
 
 /* Jumbotron */
 .jumbotron {
     margin-bottom: 0;
-    background-color: #2e8b57;
+    background-color: #2e8b57; /* Darker green for jumbotron */
     color: white;
     text-align: center;
 }
@@ -95,46 +96,43 @@ body, html {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    z-index: -1; /* To place video behind content */
+    z-index: -1; /* To place behind content */
 }
 
-/* Overlay to go over the video */
+/* Ensuring all text inside the overlay is white */
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
-    z-index: 1; /* Ensure it's in front of the video */
+    text-align: center;
 }
 
+/* Styling for the header text */
 .overlay h1 {
-    font-size: 4rem;
-    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
 }
 
 .overlay p {
     font-size: 1.3rem;
-    color: white;
+    color: #fff;
 }
 
-/* Styling the button in the overlay */
+/* Styling the button */
 .overlay .btn-secondary {
-    background-color: #6c757d;
+    background-color: #6c757d; /* Grey button for contrast */
     border-color: #6c757d;
-    color: white;
+    color: #fff;
 }
 
 .overlay .btn-secondary:hover {
     background-color: #5a6268;
     border-color: #545b62;
-    color: white;
+    color: #fff;
 }
 
 /* Responsive text adjustments */
@@ -164,6 +162,7 @@ body, html {
 
 #latest-article p {
     font-size: 1.1rem;
+    color: #666;
 }
 
 #latest-article .btn-primary {
@@ -277,7 +276,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #66b27d;
+    color: #66b27d; /* Light green on hover */
 }
 
 /* Responsive Design */
@@ -296,29 +295,13 @@ footer a:hover {
     }
 }
 
-/* Contact Form */
-.contact-form {
-    padding-top: 100px;
-    margin-bottom: 40px;
+/* Article Content */
+.article-content {
+    margin-top: 20px;
 }
 
-.contact-form h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.contact-form .form-group label {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.contact-form button {
-    background-color: #1c3d24;
-    border: none;
-}
-
-.contact-form button:hover {
-    background-color: #2e8b57;
+.article-text {
+    padding: 20px;
 }
 
 /* Slideshow Styles */
@@ -341,4 +324,29 @@ footer a:hover {
 
 .carousel-item img {
     border-radius: 5px;
+}
+
+/* Contact Form */
+.contact-form {
+    padding-top: 100px; /* Adjust for fixed navbar */
+    margin-bottom: 40px;
+}
+
+.contact-form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-form button {
+    background-color: #1c3d24;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: #2e8b57;
 }
