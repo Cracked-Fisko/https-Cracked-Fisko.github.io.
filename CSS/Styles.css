@@ -99,18 +99,51 @@ body, html {
     z-index: -1; /* To place behind content */
 }
 
+/* Ensuring all text inside the overlay is white */
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+    color: white; /* Ensures all text in the overlay is white */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
     text-align: center;
+}
+
+/* Styling for the header text */
+.overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff; /* White for the main header */
+}
+
+.overlay p {
+    font-size: 1.3rem;
+    color: #fff; /* White for the subtext */
+}
+
+/* Styling the button */
+.overlay .btn-secondary {
+    background-color: #6c757d; /* Grey button for contrast */
+    border-color: #6c757d;
+    color: #fff; /* Ensuring text on the button is white */
+}
+
+.overlay .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #fff; /* Keep button text white on hover */
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+    .overlay h1 {
+        font-size: 2.5rem; /* Smaller header on smaller screens */
+    }
+    
+    .overlay p {
+        font-size: 1.1rem; /* Smaller subtext on smaller screens */
+    }
 }
 
 /* Latest Article Section */
