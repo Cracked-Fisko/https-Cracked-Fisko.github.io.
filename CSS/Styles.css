@@ -7,16 +7,14 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
-
-/* 404 Page Styles */
 .container h1 {
     font-size: 6rem;
-    color: #fff;
+    color: #333;
 }
 
 .container p {
     font-size: 1.3rem;
-    color: #fff;
+    color: #666;
 }
 
 .container .btn {
@@ -114,13 +112,24 @@ body, html {
 .overlay h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #fff;
+    color: #666;
 }
 
 .overlay p {
     font-size: 1.3rem;
+    color: #333;
+}
+.overlay h45 {
+    font-size: 3rem;
+    font-weight: bold;
     color: #fff;
 }
+
+.overlay p45 {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
 
 /* Styling the button */
 .overlay .btn-secondary {
