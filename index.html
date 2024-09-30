@@ -121,8 +121,6 @@
     <!-- jQuery and Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script to Load Latest Article -->
     <script>
 // Script to Load Latest Article
 document.addEventListener('DOMContentLoaded', function() {
@@ -145,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Set the background image of the article container
       if (latestArticle.image) {
         document.getElementById('article-container').style.backgroundImage = `url(${latestArticle.image})`;
+        document.getElementById('article-container').style.height = '100%';  // Ensure the image fills the container
       }
     })
     .catch(error => {
