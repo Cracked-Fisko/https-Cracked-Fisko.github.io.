@@ -131,25 +131,7 @@ body, html {
     color: white;
     text-align: center;
 }
- .article-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    min-height: 300px;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;  /* Forces all text inside the container to be white */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
-  #article-title, #article-excerpt {
-    color: white;  /* Forces title and excerpt to be white */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Optional: Adds a shadow to improve readability */
-  }
 /* Latest Article Section */
 #latest-article {
     padding: 20px;
@@ -206,12 +188,24 @@ body, html {
     width: 150px;
     height: 150px;
 }
-  .article-bg {
+ .article-bg {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 300px;
     padding: 20px;
     border-radius: 8px;
-    color: white;
+    color: white;  /* Forces all text inside the container to be white */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #article-title, #article-excerpt {
+    color: white;  /* Forces title and excerpt to be white */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Optional: Adds a shadow to improve readability */
   }
 /* Articles Page Styles */
 #articles-list .article-item {
