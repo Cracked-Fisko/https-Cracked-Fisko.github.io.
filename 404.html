@@ -11,29 +11,42 @@
     <link href="https://raw.githubusercontent.com/Cracked-Fisko/Cracked-Fisko.github.io/refs/heads/main/CSS/Styles.css" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="https://spicystudio.co.uk/">Spicy Studios</a>
+    <a class="navbar-brand active" href="../">Spicy Studios</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="https://spicystudio.co.uk/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://spicystudio.co.uk/nav/about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://spicystudio.co.uk/nav/projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://spicystudio.co.uk/nav/articles">Articles</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://spicystudio.co.uk/nav/contact">Contact</a></li>
+            <li class="nav-item active"><a class="nav-link" href="../">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/articles">Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="../nav/contact">Contact</a></li>
         </ul>
 
         <!-- Search Form -->
-        <form class="form-inline ml-3" action="https://spicystudio.co.uk/nav/search" method="get">
+        <form class="form-inline ml-3" action="../nav/search" method="get">
             <input class="form-control mr-2" type="search" placeholder="Search..." aria-label="Search" name="query">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
+	  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop(); // Get the current page name
+    
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === page) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  });
+</script>
+
 <!-- 404 Content -->
 <div class="container text-center" style="margin-top: 100px;">
     <h1 class="display-1">404</h1>

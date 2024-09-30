@@ -7,7 +7,6 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
-/* 404 Page Styles */
 .container h1 {
     font-size: 6rem;
     color: #333;
@@ -106,7 +105,18 @@ body, html {
     object-fit: cover;
     z-index: -1; /* To place behind content */
 }
-
+.overlay {
+  pointer-events: none;
+}
+.overlay .container,
+.overlay .container .box,
+.overlay .container h45,
+.overlay .container p45 {
+  user-select: none; /* Prevent text selection */
+}
+.overlay .container {
+  pointer-events: auto; /* Enable interaction with elements inside the container */
+}
 .overlay {
     position: absolute;
     top: 0;
