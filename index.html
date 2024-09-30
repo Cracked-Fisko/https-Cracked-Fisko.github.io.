@@ -102,16 +102,17 @@
   </header>
 
     <!-- Latest Article Section -->
-    <div id="latest-article" class="text-center">
-      <h2>Latest Article</h2>
-      <div id="article-container">
-        <div id="article-title">Loading latest article...</div>
-        <div id="article-excerpt"></div>
-        <div class="button-container">
-          <a id="read-more-link" class="btn btn-secondary btn-lg" href="latestArticle.link">Read More</a>
-        </div>
-      </div>
+<div id="latest-article" class="text-center">
+  <h2>Latest Article</h2>
+  <div id="article-container" class="article-bg">
+    <div id="article-title">Loading latest article...</div>
+    <div id="article-excerpt"></div>
+    <div class="button-container">
+      <a id="read-more-link" class="btn btn-secondary btn-lg" href="latestArticle.link">Read More</a>
     </div>
+  </div>
+</div>
+
 
     <footer class="text-center bg-dark text-white py-4">
         <p>&copy; 2024 Spicy Studios. All rights reserved.</p>
@@ -123,93 +124,34 @@
 
     <!-- Script to Load Latest Article -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Fetch the JSON file containing the articles
-        fetch('../articles/articles.json')
-          .then(response => response.json())
-          .then(articles => {
-            // Find the latest article based on publication date
-            let latestArticle = articles.reduce((latest, current) => {
-              let latestDate = new Date(latest.publication_date);
-              let currentDate = new Date(current.publication_date);
-              return currentDate > latestDate ? current : latest;
-            });
-
-            // Update the article section with the latest article's details
-            document.getElementById('article-title').textContent = latestArticle.title;
-            document.getElementById('article-excerpt').textContent = latestArticle.excerpt;
-            document.getElementById('read-more-link').setAttribute('href', latestArticle.link);
-          })
-          .catch(error => {
-            console.error('Error loading articles:', error);
-            document.getElementById('article-title').textContent = 'Failed to load article.';
-          });
+// Script to Load Latest Article
+document.addEventListener('DOMContentLoaded', function() {
+  // Fetch the JSON file containing the articles
+  fetch('../articles/articles.json')
+    .then(response => response.json())
+    .then(articles => {
+      // Find the latest article based on publication date
+      let latestArticle = articles.reduce((latest, current) => {
+        let latestDate = new Date(latest.publication_date);
+        let currentDate = new Date(current.publication_date);
+        return currentDate > latestDate ? current : latest;
       });
+
+      // Update the article section with the latest article's details
+      document.getElementById('article-title').textContent = latestArticle.title;
+      document.getElementById('article-excerpt').textContent = latestArticle.excerpt;
+      document.getElementById('read-more-link').setAttribute('href', latestArticle.link);
+      
+      // Set the background image of the article container
+      if (latestArticle.image) {
+        document.getElementById('article-container').style.backgroundImage = `url(${latestArticle.image})`;
+      }
+    })
+    .catch(error => {
+      console.error('Error loading articles:', error);
+      document.getElementById('article-title').textContent = 'Failed to load article.';
+    });
+});
     </script>
   </body>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
-
-    searchForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const query = searchInput.value.toLowerCase();
-
-      // Fetch both the articles and projects JSON files
-      Promise.all([
-        fetch('../projects/projects.json').then(res => res.json()),
-        fetch('../articles/articles.json').then(res => res.json())
-      ]).then(([projects, articles]) => {
-        let results = [];
-
-        // Search Projects
-        projects.forEach(project => {
-          if (project.title.toLowerCase().includes(query) || project.excerpt.toLowerCase().includes(query)) {
-            results.push({
-              type: 'Project',
-              title: project.title,
-              link: project.link
-            });
-          }
-        });
-
-        // Search Articles
-        articles.forEach(article => {
-          if (article.title.toLowerCase().includes(query) || article.excerpt.toLowerCase().includes(query)) {
-            results.push({
-              type: 'Article',
-              title: article.title,
-              link: article.link
-            });
-          }
-        });
-
-        displayResults(results);
-      }).catch(error => {
-        console.error('Error fetching data:', error);
-      });
-    });
-
-    function displayResults(results) {
-      let resultsContainer = document.getElementById('search-results');
-      resultsContainer.innerHTML = '';  // Clear previous results
-
-      if (results.length === 0) {
-        resultsContainer.innerHTML = '<p>No results found</p>';
-        return;
-      }
-
-      // Generate HTML for each result
-      results.forEach(result => {
-        let resultHTML = `
-          <div class="search-result-item">
-            <p><strong>${result.type}:</strong> <a href="${result.link}">${result.title}</a></p>
-          </div>
-        `;
-        resultsContainer.innerHTML += resultHTML;
-      });
-    }
-  });
-</script>
 </html>
