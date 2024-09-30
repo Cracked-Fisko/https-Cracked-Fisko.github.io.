@@ -7,6 +7,12 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+
+/* Container Styles */
+.container {
+    padding-top: 70px; /* Adjust padding for fixed navbar */
+}
+
 .container h1 {
     font-size: 6rem;
     color: #fff;
@@ -29,19 +35,13 @@ body, html {
     background-color: #2e8b57;
 }
 
-
-/* General Container Styling */
-.container {
-    padding-top: 70px; /* Adjust padding for fixed navbar */
-}
-
 /* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1030;
-    background-color: #1c3d24; /* Dark green background for navbar */
+    background-color: #1c3d24;
 }
 
 .navbar-brand {
@@ -51,23 +51,23 @@ body, html {
 
 .nav-link {
     font-size: 1.1rem;
-    color: white !important; /* White links */
+    color: white !important;
 }
 
 .nav-link:hover {
-    color: #66b27d !important; /* Light green on hover */
+    color: #66b27d !important;
 }
 
 .navbar-nav .nav-item.active .nav-link,
 .nav-link.active {
-    color: #66b27d !important; /* Light green for active links */
+    color: #66b27d !important;
     font-weight: bold;
 }
 
 /* Jumbotron */
 .jumbotron {
     margin-bottom: 0;
-    background-color: #2e8b57; /* Darker green for jumbotron */
+    background-color: #2e8b57;
     color: white;
     text-align: center;
 }
@@ -95,51 +95,56 @@ body, html {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    z-index: -1; /* To place behind content */
+    z-index: -1; /* To place video behind content */
 }
 
-/* Ensuring all text inside the overlay is white */
+/* Overlay to go over the video */
 .overlay {
-    color: white; /* Ensures all text in the overlay is white */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
     text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    z-index: 1; /* Ensure it's in front of the video */
 }
 
-/* Styling for the header text */
-.container.text-center.text-white h1,
-.container.text-center.text-white p {
-    color: white !important;
+.overlay h1 {
+    font-size: 4rem;
+    color: white;
 }
+
 .overlay p {
     font-size: 1.3rem;
-    color: #fff; /* White for the subtext */
+    color: white;
 }
 
-/* Styling the button */
+/* Styling the button in the overlay */
 .overlay .btn-secondary {
-    background-color: #6c757d; /* Grey button for contrast */
+    background-color: #6c757d;
     border-color: #6c757d;
-    color: #fff; /* Ensuring text on the button is white */
+    color: white;
 }
 
 .overlay .btn-secondary:hover {
     background-color: #5a6268;
     border-color: #545b62;
-    color: #fff; /* Keep button text white on hover */
+    color: white;
 }
 
 /* Responsive text adjustments */
 @media (max-width: 768px) {
     .overlay h1 {
-        font-size: 2.5rem; /* Smaller header on smaller screens */
+        font-size: 2.5rem;
     }
     
     .overlay p {
-        font-size: 1.1rem; /* Smaller subtext on smaller screens */
+        font-size: 1.1rem;
     }
 }
 
@@ -162,12 +167,12 @@ body, html {
 }
 
 #latest-article .btn-primary {
-    background-color: #1c3d24; /* Dark green for buttons */
+    background-color: #1c3d24;
     border-color: #1c3d24;
 }
 
 #latest-article .btn-primary:hover {
-    background-color: #2e8b57; /* Lighter green on hover */
+    background-color: #2e8b57;
     border-color: #2e8b57;
 }
 
@@ -220,14 +225,15 @@ body, html {
 }
 
 #articles-list .btn-primary {
-    background-color: #1c3d24; /* Dark green for buttons */
+    background-color: #1c3d24;
     border-color: #1c3d24;
 }
 
 #articles-list .btn-primary:hover {
-    background-color: #2e8b57; /* Lighter green on hover */
+    background-color: #2e8b57;
     border-color: #2e8b57;
 }
+
 /* Article Item */
 .article-item {
     background-color: #f9f9f9;
@@ -250,6 +256,7 @@ body, html {
     font-size: 0.9rem;
     color: #666;
 }
+
 /* Footer Styles */
 footer {
     margin-top: auto;
@@ -270,7 +277,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #66b27d; /* Light green on hover */
+    color: #66b27d;
 }
 
 /* Responsive Design */
@@ -288,41 +295,30 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
-/* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030;
-    background-color: #1c3d24; /* Dark green background for navbar */
+
+/* Contact Form */
+.contact-form {
+    padding-top: 100px;
+    margin-bottom: 40px;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
+.contact-form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.nav-link {
-    font-size: 1.1rem;
-    color: white !important; /* White links */
+.contact-form .form-group label {
+    font-size: 1.2rem;
+    color: #333;
 }
 
-.nav-link:hover {
-    color: #66b27d !important; /* Light green on hover */
+.contact-form button {
+    background-color: #1c3d24;
+    border: none;
 }
 
-.navbar-nav .nav-item.active .nav-link,
-.nav-link.active {
-    color: #66b27d !important; /* Light green for active links */
-    font-weight: bold;
-}
-/* Article Content */
-.article-content {
-    margin-top: 20px;
-}
-
-.article-text {
-    padding: 20px;
+.contact-form button:hover {
+    background-color: #2e8b57;
 }
 
 /* Slideshow Styles */
@@ -345,28 +341,4 @@ footer a:hover {
 
 .carousel-item img {
     border-radius: 5px;
-}
-/* Contact Form */
-.contact-form {
-    padding-top: 100px; /* Adjust for fixed navbar */
-    margin-bottom: 40px;
-}
-
-.contact-form h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.contact-form .form-group label {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.contact-form button {
-    background-color: #1c3d24;
-    border: none;
-}
-
-.contact-form button:hover {
-    background-color: #2e8b57;
 }
